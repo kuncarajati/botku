@@ -17,6 +17,11 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 async def on_ready():
     print(f'We have logged in as {bot.user}')
 
+@bot.command(name='bot')
+async def _bot(ctx):
+    """Is the bot cool?"""
+    await ctx.send('Yes, the bot is cool.')
+
 @bot.command()
 async def hello(ctx):
     await ctx.send(f'Hi! I am a bot {bot.user}!')
